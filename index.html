@@ -19,10 +19,9 @@
   }
 
   .page {
-  position: relative;
-  width: 100%;
-  height: 100svh;
-  height: 100dvh;
+  height: 100vh;   /* desktop fallback */
+  height: 100svh;  /* iOS Safari stable */
+  height: 100dvh;  /* modern browsers */
   overflow: hidden;
 }
 
