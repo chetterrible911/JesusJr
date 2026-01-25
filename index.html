@@ -49,11 +49,15 @@
     }
 
     /* Overlay PNG */
-    .overlay {
-      max-width: 420px;
-      width: 100%;
-      height: auto;
-    }
+  .overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;   /* make it full height */
+  width: auto;    /* scale width to preserve aspect ratio */
+  z-index: 2;
+}
 
     /* Email form */
     form {
