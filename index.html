@@ -1,136 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jesus Jr</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jesus Jr</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    background: black;
+    font-family: Arial, sans-serif;
+  }
+
+  .page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Combined image */
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* desktop */
+    display: block;
+  }
+
+  /* Centered form */
+  .form-wrapper {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.55); /* optional */
+    padding: 14px 16px;
+    border-radius: 8px;
+  }
+
+  input[type="email"] {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+  }
+
+  button {
+    padding: 10px 14px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+    border-radius: 4px;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .hero-image {
+      object-fit: cover;
+      object-position: center;
     }
 
-    body, html {
-      height: 100%;
-      font-family: Arial, sans-serif;
-      background: black;
-    }
-
-    .page {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* Background image */
-    .background {
-      position: absolute;
-      inset: 0;
-      background-image: url("images/background.jpg");
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
-
-    /* Overlay PNG full height */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 100%;
-      width: auto;
-      z-index: 2;
-      pointer-events: none; /* allows clicks to pass through to form */
-    }
-
-    /* Centered content wrapper */
-    .content {
-      position: relative;
-      z-index: 3; /* ensures form is above overlay */
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end; /* pushes form to bottom */
-      align-items: center;
-      padding: 24px;
-      text-align: center;
-    }
-
-    /* Email form */
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-      max-width: 320px;
-      background: rgba(0, 0, 0, 0.6); /* optional: semi-transparent background */
-      padding: 16px;
-      border-radius: 8px;
+      padding: 12px;
     }
 
-    input[type="email"],
-    textarea {
-      padding: 12px;
-      font-size: 16px;
-      border: none;
-      outline: none;
-      width: 100%;
-      border-radius: 4px;
+    input[type="email"] {
+      width: 170px;
+      font-size: 14px;
     }
 
     button {
-      padding: 12px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      background: white;
-      color: black;
-      border-radius: 4px;
+      font-size: 14px;
     }
-
-    /* Mobile behavior */
-    @media (max-width: 768px) {
-      .background {
-        background-position: center center;
-        transform: scale(1.15);
-      }
-
-      .overlay {
-        height: 100%;
-      }
-
-      form {
-        max-width: 90%;
-        padding: 12px;
-      }
-
-      input[type="email"],
-      textarea,
-      button {
-        width: 100%;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
   <div class="page">
-    <div class="background"></div>
+    <img
+      src="images/landing-page.png"
+      alt="Jesus Jr artwork"
+      class="hero-image"
+    />
 
-    <div class="content">
-      <img
-        src="images/overlay.png"
-        alt="Jesus Jr artwork"
-        class="overlay"
-      />
-
+    <div class="form-wrapper">
       <form action="https://formspree.io/f/xaqoyrvb" method="POST">
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="Your message" rows="3" required></textarea>
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+        />
         <button type="submit">Send</button>
       </form>
     </div>
