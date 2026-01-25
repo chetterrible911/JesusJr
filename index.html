@@ -35,73 +35,81 @@
       z-index: 1;
     }
 
+    /* Overlay PNG full height */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: auto;
+      z-index: 2;
+      pointer-events: none; /* allows clicks to pass through to form */
+    }
+
     /* Centered content wrapper */
     .content {
       position: relative;
-      z-index: 2;
+      z-index: 3; /* ensures form is above overlay */
       height: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end; /* pushes form to bottom */
       align-items: center;
-      justify-content: center;
       padding: 24px;
       text-align: center;
     }
 
-    /* Overlay PNG */
-  .overlay {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;   /* make it full height */
-  width: auto;    /* scale width to preserve aspect ratio */
-  z-index: 2;
-}
-
     /* Email form */
     form {
-      margin-top: 24px;
       display: flex;
-      gap: 8px;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 320px;
+      background: rgba(0, 0, 0, 0.6); /* optional: semi-transparent background */
+      padding: 16px;
+      border-radius: 8px;
     }
 
-    input[type="email"] {
+    input[type="email"],
+    textarea {
       padding: 12px;
       font-size: 16px;
       border: none;
       outline: none;
-      width: 220px;
+      width: 100%;
+      border-radius: 4px;
     }
 
     button {
-      padding: 12px 16px;
+      padding: 12px;
       font-size: 16px;
       border: none;
       cursor: pointer;
       background: white;
       color: black;
+      border-radius: 4px;
     }
 
-    /* 🔽 Mobile behavior */
+    /* Mobile behavior */
     @media (max-width: 768px) {
       .background {
-        /* Crop to center area on mobile */
         background-position: center center;
         transform: scale(1.15);
       }
 
       .overlay {
-        max-width: 300px;
+        height: 100%;
       }
 
       form {
-        flex-direction: column;
-        width: 100%;
-        max-width: 280px;
+        max-width: 90%;
+        padding: 12px;
       }
 
       input[type="email"],
+      textarea,
       button {
         width: 100%;
       }
@@ -120,20 +128,11 @@
         class="overlay"
       />
 
-     <form
-  action="https://formspree.io/f/xaqoyrvb"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <button type="submit">Send</button>
-</form>
+      <form action="https://formspree.io/f/xaqoyrvb" method="POST">
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message" rows="3" required></textarea>
+        <button type="submit">Send</button>
+      </form>
     </div>
   </div>
 </body>
