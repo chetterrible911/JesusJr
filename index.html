@@ -25,6 +25,7 @@
     body, html {
       background: black;
       font-family: "Courier New", Courier, monospace;
+      overflow-x: hidden;
     }
     .panel {
   position: relative;
@@ -33,6 +34,11 @@
   height: 100svh;
   height: 100dvh;
   overflow: hidden;
+}
+  
+.panel:last-child {
+  overflow: hidden;
+  touch-action: pan-y;
 }
     .hero-image {
       width: 100%;
