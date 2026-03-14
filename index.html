@@ -27,6 +27,10 @@
       font-family: "Courier New", Courier, monospace;
       overflow-x: hidden;
     }
+html {
+  scroll-snap-type: y mandatory;
+}
+    
     .panel {
   position: relative;
   width: 100%;
@@ -34,6 +38,7 @@
   height: 100svh;
   height: 100dvh;
   overflow: hidden;
+  scroll-snap-align: start;
 }
   
 .panel:last-child {
