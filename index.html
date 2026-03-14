@@ -26,15 +26,12 @@
       background: black;
       font-family: "Courier New", Courier, monospace;
     }
-
-    /* Each panel is full viewport height */
     .panel {
-  position: relative;
-  width: 100%;
-  height: 100svh;
-  overflow: hidden;
-}
-
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      overflow: hidden;
+    }
     .hero-image {
       width: 100%;
       height: 100%;
@@ -45,17 +42,23 @@
 
     /* Email form — page 2 */
     .form-wrapper {
-  position: absolute;
-  z-index: 2;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      /* ============================
+         ADJUST FORM POSITION HERE
+         (% from top of panel)
+         ============================ */
+      top: 45%;
+    }
     form {
       display: flex;
       gap: 10px;
       align-items: center;
+      justify-content: center;
     }
     input[type="email"] {
       padding: 20px;
@@ -78,10 +81,15 @@
     .link-wrapper {
       position: absolute;
       z-index: 2;
-      top: 500px;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
+
+      /* ============================
+         ADJUST LINK POSITION HERE
+         (px from top of panel)
+         ============================ */
+      top: 500px;
     }
     .link-wrapper a {
       display: block;
@@ -93,6 +101,7 @@
     }
     .link-wrapper a:hover {
       text-decoration: underline;
+    }
 
     /* MOBILE */
     @media (max-width: 768px) {
@@ -103,9 +112,22 @@
       input[type="email"] {
         width: 150px;
         font-size: 12px;
+        padding: 5px;
       }
       button {
         font-size: 12px;
+        padding: 5px;
+      }
+      .link-wrapper a {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+      }
+
+      /* ============================
+         ADJUST MOBILE POSITIONS HERE
+         ============================ */
+      .form-wrapper {
+        top: 45%;
       }
       .link-wrapper {
         top: 250px;
