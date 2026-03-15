@@ -23,19 +23,20 @@
       box-sizing: border-box;
     }
     body, html {
-      background: black;
-      font-family: "Courier New", Courier, monospace;
-      overflow-x: hidden;
-    }
+  background: black;
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: hidden;
+  height: 100%;
+}
 html {
   scroll-snap-type: y mandatory;
+  overscroll-behavior-y: none;
+  height: 100%;
 }
     
     .panel {
   position: relative;
   width: 100%;
-  height: 100vh;
-  height: 100svh;
   height: 100dvh;
   overflow: hidden;
   scroll-snap-align: start;
