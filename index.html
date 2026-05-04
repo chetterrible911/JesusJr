@@ -58,17 +58,7 @@
       object-position: center;
       display: block;
     }
-@keyframes bandcampDrop {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -70%) scale(0.9);
-  }
 
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
     /* ============================
        BANDCAMP PLAYER (ADDED)
        ============================ */
@@ -76,14 +66,11 @@
   position: absolute;
   z-index: 3;
 
-  top: 50%;
-  left: 50%;
+  top: 55%;
+  left: 30%;
   transform: translate(-50%, -60%) scale(0.9);
 
   width: 320px;
-
-  opacity: 0;
-  animation: bandcampDrop 0.8s ease-out forwards;
 }
 
 .bandcamp-player iframe {
