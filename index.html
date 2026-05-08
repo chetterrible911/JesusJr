@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2TE15G3S9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W2TE15G3S9');
+  </script>
+  <meta property="og:image" content="https://www.jesusjr.band/images/thumbnail.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <title>Jesus Jr</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      background: black;
+      font-family: "Roboto Serif", serif;
+      overflow-x: hidden;
+      height: 100%;
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+      overscroll-behavior-y: none;
+      height: 100%;
+    }
+
+    .panel {
+      position: relative;
+      width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .panel:last-child {
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .bandcamp-player {
+      position: absolute;
+      z-index: 3;
+      top: 55%;
+      left: 30%;
+      transform: translate(-50%, -60%) scale(0.9);
+      width: 320px;
+    }
+
+    .bandcamp-player iframe {
+      width: 100%;
+      height: 42px;
+      border: 0;
+      border-radius: 4px;
+    }
+
+    .form-wrapper {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      top: 45%;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input[type="email"] {
+      padding: 20px;
+      font-size: 25px;
+      border: none;
+      border-radius: 4px;
+      width: 300px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 25px;
+      border: none;
+      cursor: pointer;
+      background: white;
+      color: black;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-image {
+        object-fit: cover;
+        object-position: center;
+      }
+
+      input[type="email"] {
+        width: 150px;
+        font-size: 12px;
+        padding: 5px;
+      }
+
+      button {
+        font-size: 12px;
+        padding: 5px;
+      }
+
+      .form-wrapper {
+        top: 50%;
+      }
+
+      .bandcamp-player {
+        top: auto;
+        bottom: 50%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 70%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Page 1 -->
+  <div class="panel">
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/mobile-1.jpg">
+      <img src="images/desktop-1.jpg" alt="Jesus Jr" class="hero-image" />
+    </picture>
+
+    <div class="bandcamp-player">
+      <iframe
+        src="https://bandcamp.com/EmbeddedPlayer/track=2242435649/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+        seamless>
+        <a href="https://chetterrible.bandcamp.com/track/comanche-tx-demo-2">
+          Comanche, TX (demo) by Jesus Jr
+        </a>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Page 2 — email form -->
+  <div class="panel">
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/mobile-2.jpg">
+      <img src="images/desktop-2.jpg" alt="Jesus Jr" class="hero-image" />
+    </picture>
+
+    <div class="form-wrapper">
+      <form action="https://formspree.io/f/xaqoyrvb" method="POST">
+        <input type="email" name="email" placeholder="email" required />
+        <button type="submit">send</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
